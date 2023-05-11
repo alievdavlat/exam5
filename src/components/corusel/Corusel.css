@@ -1,0 +1,39 @@
+
+.hero .slick-next,
+.hero .slick-prev{
+  width: 70px !important;
+  height: 70px !important;
+  border-radius: 50%;
+}
+.hero .slick-next{
+  margin-right: 30px !important;
+
+}
+.hero .slick-prev{
+  margin-left: 50px;
+  z-index: 100;
+}
+.hero .slick-next::after,
+.hero .slick-prev::after{
+  font-weight: 100 !important;
+  font-size: 40px !important;
+  
+}
+.hero .slick-prev::before,
+.hero .slick-next::before{
+  color: rgba(255, 255, 255, 0.5) !important;
+  opacity: 1 !important;
+  font-size: 50px !important;
+  font-weight: 200 !important;
+
+}
+.hero .slick-next::before{
+  z-index: 100;
+}
+.hero .slick-prev::before{
+  z-index: 100;
+}
+.hero{
+  width: 100%;
+  padding-left: 20px;
+}
