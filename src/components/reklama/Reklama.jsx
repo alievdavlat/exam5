@@ -1,10 +1,12 @@
 import React from 'react'
 import './Reklama.css'
 
-function Reklama({bg}) {
+function Reklama() {
   return (
     <div className='container'>
-      <img className='reklama' src={bg} alt={'img'} />
+      <div className='img-container'> 
+      {/* <img className='reklama' src={bg} alt={'img'} /> */}
+      </div>
     </div>
   )
 }

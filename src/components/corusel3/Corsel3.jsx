@@ -2,19 +2,21 @@ import React, { Component } from "react";
 import Slider from "react-slick";
 import './Corusel3.css'
 import NewCart from "../newCart/NewCart";
+import axios from "axios";
 
-const products = [
-    {title:'Торт "Наполеон" классический', info:"Купили более 300 раз", likes:96, price:'1 600 ₽', weight:'1,25 кг.'},
-    {title:'Торт "Наполеон" классический', info:"Купили более 300 раз", likes:96, price:'1 600 ₽', weight:'1,25 кг.'},
-    {title:'Торт "Наполеон" классический', info:"Купили более 300 раз", likes:96, price:'1 600 ₽', weight:'1,25 кг.'},
-    {title:'Торт "Наполеон" классический', info:"Купили более 300 раз", likes:96, price:'1 600 ₽', weight:'1,25 кг.'},
-    {title:'Торт "Наполеон" классический', info:"Купили более 300 раз", likes:96, price:'1 600 ₽', weight:'1,25 кг.'},
-    {title:'Торт "Наполеон" классический', info:"Купили более 300 раз", likes:96, price:'1 600 ₽', weight:'1,25 кг.'},
-    
-  ]
+ const  Corusel3 = () => {
+  const [product, setProduct] = React.useState([])
+  const getData = async () => {
+    const another = await axios.get('http://localhost:3001/another')
+    setProduct(another.data)
 
-export default class Corusel3 extends Component {
-  render() {
+  }
+
+  React.useEffect(() => {
+    getData()
+  },[])
+
+  
     const settings = {
       dots: false,
       infinite: true,
@@ -54,11 +56,13 @@ export default class Corusel3 extends Component {
         <Slider {...settings}>
 
           {
-            products.map((item , idx) => <NewCart key={idx} />)
+            product.map((item , idx) => <NewCart key={idx} {...item} />)
           }
         
         </Slider>
       </div>
     );
-  }
+  
 }
+
+export default Corusel3

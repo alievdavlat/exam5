@@ -1,22 +1,19 @@
 import React from 'react'
 import VisibilityIcon from '@mui/icons-material/Visibility';
-import img from '../../assets/img/products/Торт для инстаграм-25 1 (2).jpg'
 import './NewCart.css'
 
-function NewCart() {
+function NewCart({id, name, price,img}) {
   return (
     <div className='newCart'>
         <div className='newCart-img'>
           <img src={img} alt="img" />
         </div>
         <div className="newCart-text">
-          <p>Зефир считается крайне полезным лакомством и рекомендован даже детям</p>
+          <p>{name}</p>
           <div>
-            <span>01.02.2022</span>
-              <div>
-              <span>103  </span> <span><VisibilityIcon /></span>
-
-              </div>
+            price: <span>{price}</span>
+          <div>
+        </div>
           </div>
         </div>
     </div>

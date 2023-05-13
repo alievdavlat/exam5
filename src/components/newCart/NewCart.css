@@ -18,26 +18,15 @@
 }
 .newCart-text p{
   font-weight: 400;
-  font-size: 22px;
+  font-size: 21px;
   line-height: 28px;
   color: #3A3A3A;
   margin-bottom: 30px;
   margin-top: 8px;
 }
 .newCart-text div{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 16px;
   line-height: 21px;
-  color: #BABABA;
 }
-.newCart-text div>div{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-}
-
 

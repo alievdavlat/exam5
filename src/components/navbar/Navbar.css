@@ -3,6 +3,7 @@
   display: flex;
   padding: 27px;
   gap: 98px;
+  justify-content:space-between;
 }
 .navbar-left {
   display: flex;
@@ -14,6 +15,7 @@
   font-size: 25px;
   line-height: 38px;
   color: #3a3a3a;
+  margin-left:100px;
 }
 .navbar-left ul li,
 .navbar-left ul {

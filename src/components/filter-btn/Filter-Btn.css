@@ -1,0 +1,21 @@
+.filterBtn{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-left: 60px;
+}
+.filterBtn-items{
+  text-align: center;
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  padding: 10px 40px ;
+  background: #FFFFFF;
+  border: 1px solid #E5E5E5;
+  cursor: pointer;
+}
+
+.filterBtnActive{
+  background:#1c243c !important;
+  color:#fff !important;
+}

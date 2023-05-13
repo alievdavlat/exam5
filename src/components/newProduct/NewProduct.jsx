@@ -2,6 +2,8 @@ import React from 'react'
 import Corusel3 from '../corusel3/Corsel3'
 import All from '../all/All'
 import './NewProduct.css'
+import Corusel2 from '../corusel2/Corusel2'
+import axios from 'axios'
 
 function NewProduct() {
   return (
@@ -9,12 +11,12 @@ function NewProduct() {
         <div className='newProduct-wrapper'>
 
           <div className='titles'>
-          <h3>Новинки</h3>  <All/>
+          <h3>another Product</h3>  <All/>
           </div>
 
            <div className="newProduct"> 
 
-              <Corusel3/>
+              <Corusel3  show={3}/>
               
            </div>
         </div>

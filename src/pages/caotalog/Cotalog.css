@@ -1,0 +1,10 @@
+
+.cotalog{
+  display: flex;
+  margin-top: 100px;
+
+}
+.cotalog-right{
+display: flex;
+flex-direction: column;
+}

@@ -9,7 +9,7 @@ import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import WorkOutlineSharpIcon from '@mui/icons-material/WorkOutlineSharp';
 
-const navTItle = ['Торты', 'Десерты в баночках', 'Покупателям']
+const navTItle = ['mackbooks', 'acers', 'lenova']
 
 function Navbar() {
   return (
@@ -18,18 +18,18 @@ function Navbar() {
     <nav className='navbar'>
       <div className="navbar-left">
         <ul>
-          <li> <MenuIcon sx={{fontSize:'30px'}} />  <span>Каталог</span></li>
+          <li> <MenuIcon sx={{fontSize:'30px'}} />  <span>Cotalog</span></li>
             {
               navTItle.map((item, idx) => <li key={idx}>{item}</li>)
             }
         </ul>
-          <h1>NapoleonCake</h1>
+          <h1>LapTop.uz</h1>
       </div>
 
       <div className="navbar-right">
         <div className="navbar-addres">
 
-          <h2>8 800 200-95-70</h2> <span>Ежедневно с 8:00 до 20:00</span>
+          <h2>+99899 933 15 64 </h2> <span>  8:00 To 20:00</span>
           </div>
 
         <div className="navbar-icons">

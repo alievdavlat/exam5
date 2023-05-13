@@ -1,11 +1,10 @@
-
 export { default as Navbar } from './navbar/Navbar'
 export { default as Hero } from './hero/Hero'
 export { default as Corusel } from './corusel/Corusel.jsx'
 export { default as ProductsCart } from './porductsCart/ProductsCart'
 export { default as Product } from './products/Products'
-export { default as Traditional } from './traditional/Traditional'
 export { default as All } from './all/All'
-export { default as Dissert } from './dissert/Dissert'
 export { default as Footer } from './footer/Footer'
-
+export { default as CotalogModal } from './cotalog-modal/Cotalog-Modal.jsx'
+export { default as Corusel2 } from './corusel2/Corusel2'
+export { default as FilterBtn } from './filter-btn/Filter-Btn'

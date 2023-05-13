@@ -1,7 +1,16 @@
+.img-container{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin-top:60px;
+  /* background:url(../assets/img/bg); */
+}
 .reklama{
-  width: 100%;
+  width: 90%;
   height: 435px;
   margin-top: 112px;
   background-repeat: no-repeat;
-  margin-bottom: 100px;
+  margin-bottom: 100px;   
+  object-fit:cover;
+
 }

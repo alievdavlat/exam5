@@ -7,18 +7,22 @@ import All from '../all/All'
 
 
 
-function Products() {
+function Products({title, data,show}) {
+ 
+ 
+
+
   return (
     <div className='container'>
         <div className='product-wrapper'>
 
           <div className='titles'>
-          <h3>Новинки</h3>  <All/>
+          <h3>{title}</h3>  <All/>
           </div>
 
            <div className="products"> 
 
-              <Corusel2/>
+              <Corusel2 data={data}  show={show}/>
               
            </div>
         </div>

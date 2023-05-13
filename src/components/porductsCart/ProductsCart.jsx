@@ -1,30 +1,37 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './ProductsCart.css'
-import img from '../../assets/img/products/Торт для инстаграм-25 1 (2).jpg'
 import FavoriteIcon from '@mui/icons-material/Favorite';
+import { context } from '../../App';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 
-function ProductsCart({title, likes , price , info , weight}) {
+function ProductsCart({name, proccesor, memory,screen,price,img}) {
+  const [showSelect , setShowSelect] = useContext(context)
+  
   return (
-    <div className='productCart'>
+    <div className='productCart' style={{width:`${showSelect ? '320px' : '320px'}`, height:`${showSelect ? '530px' : '450px'}`}}>
       <div className="product-cart__img">
-        <img src={img} alt={title} />
+        <img src={img} alt={name} />
       </div>
 
       <div className="productCart-info">
-        <h5>{title}</h5>
+        <h5>{name}</h5>
 
         <div className='info'>
-          <span>{info}</span>
+          <span>{proccesor}</span>
           <div>
-          <span>({likes}) </span>
-          <span><FavoriteIcon/></span>
+          <span>({memory}) </span>
+          <span> {screen}</span>
           </div>
         </div>
 
         <span className='price'>
           <b>{price}</b>
-          <span>{weight}</span>
+          {/* <span>{}</span> */}
         </span>
+
+          <div className='karzinka'>
+            <button>В корзину</button>  <FavoriteBorderIcon sx={{fontSize:'30px',margin:'15px 0px 0px 0px'}}/>
+          </div>
       </div>
 
       

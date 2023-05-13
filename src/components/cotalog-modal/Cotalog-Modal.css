@@ -1,0 +1,25 @@
+.cotalog-modal{
+  width: 300px;
+  height: 700px;
+  padding:20px;
+}
+.cotalog-modal p{
+margin: 0px 0px 30px 0px;
+}
+.cotalog-modal ul{
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+}
+.cotalog-modal ul li{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+  transition: all 0.6s ease;
+
+}
+.cotalog-modal ul li:hover{
+  transform: translateX(15%);
+  color: rgb(74, 121, 162);
+}
