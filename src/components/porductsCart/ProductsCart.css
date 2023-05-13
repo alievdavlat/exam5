@@ -81,6 +81,7 @@ border-radius: 5px;
 margin-top: 20px;
 font-size: 18px;
 transition: all 0.3s ease;
+cursor: pointer;
 }
 .karzinka button:hover{
 background-color: #C6AA83;

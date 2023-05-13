@@ -18,7 +18,7 @@ function CotalogModal() {
 
   return (
     <div className='cotalog-modal'>
-        <p>Каталог</p>
+        <p>Cotalog 🧾</p>
         <ul>
          {
           arr.map((item, idx) =>  <li onClick={() => onFetch(item)} ><span>{item}</span> <ArrowForwardIosIcon/></li>)

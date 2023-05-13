@@ -8,43 +8,67 @@ import SearchIcon from '@mui/icons-material/Search';
 import PersonOutlineIcon from '@mui/icons-material/PersonOutline';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import WorkOutlineSharpIcon from '@mui/icons-material/WorkOutlineSharp';
+import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCartNames } from '../../redux/slices/cartsSlice';
+import MenuBurger from '../menu-burger/Menu-Burger';
+import { setPopUpShow } from '../../redux/slices/popUpSlice';
+import { setShowCarts, setShowInput } from '../../redux/slices/searchBarSlice';
+import SearchBar from '../searchBar/SearchBar';
 
-const navTItle = ['mackbooks', 'acers', 'lenova']
+const navTItle = ['mackbooks','acer', 'lenova','asus','hp']
 
 function Navbar() {
-  return (
-    <div className="container">
+  const dispatch = useDispatch()
+  const {popUpShow} = useSelector(state => state.popUpSlice)
+  const {showInput} = useSelector(state => state.searchBarSlice)
+
+  const handleSearch = () => {
+    dispatch(setShowInput(true))
+    dispatch(setShowCarts(true))
+  }
+
+  return (    
+    <>
+      {popUpShow && <MenuBurger/>}
+  <div className="container">
       
-    <nav className='navbar'>
-      <div className="navbar-left">
-        <ul>
-          <li> <MenuIcon sx={{fontSize:'30px'}} />  <span>Cotalog</span></li>
-            {
-              navTItle.map((item, idx) => <li key={idx}>{item}</li>)
-            }
-        </ul>
-          <h1>LapTop.uz</h1>
-      </div>
+        {
+        showInput ? <SearchBar/> :
+        <nav className='navbar'>
+            <div className="navbar-left">
+              <ul>
+                <div className='navbar-left-menu'>
+                  <span onClick={() => dispatch(setPopUpShow(true))}><MenuIcon sx={{fontSize:'30px'}} /></span>   <li>  <Link to={'/catalog'}><span className='cotalog-text'>Cotalog</span></Link></li>
+                </div>
+                  {
+                    navTItle.map((item, idx) => <Link to={'/rest'} key={idx}> <li onClick={() => dispatch(setCartNames(item))}>{item}</li> </Link>)
+                  }
+              </ul>
+                <Link to={'/'}><h1>LapTop.uz</h1></Link>
+            </div>
 
-      <div className="navbar-right">
-        <div className="navbar-addres">
+            <div className="navbar-right">
+              <div className="navbar-addres">
+                <h2>+99899 933 15 64 </h2> <span>  8:00 To 20:00</span>
+                </div>
 
-          <h2>+99899 933 15 64 </h2> <span>  8:00 To 20:00</span>
-          </div>
+              <div className="navbar-icons">
 
-        <div className="navbar-icons">
+                  <PhoneCallbackIcon sx={{fontSize:'25px'}} />
+                  <span onClick={() => handleSearch()}><SearchIcon sx={{fontSize:'25px'}} /></span>
+                  <PersonOutlineIcon sx={{fontSize:'25px'}} />
+                  <FavoriteBorderIcon sx={{fontSize:'25px'}} />
+                  <WorkOutlineSharpIcon sx={{fontSize:'25px'}} />
+                  
+              </div>
+            </div>
+        </nav>
+        }
+  </div>
 
-            <PhoneCallbackIcon sx={{fontSize:'25px'}} />
-            <SearchIcon sx={{fontSize:'25px'}} />
-            <PersonOutlineIcon sx={{fontSize:'25px'}} />
-            <FavoriteBorderIcon sx={{fontSize:'25px'}} />
-            <WorkOutlineSharpIcon sx={{fontSize:'25px'}} />
-            
-        </div>
-      </div>
-    </nav>
+    </>
 
-    </div>
   )
 }
 

@@ -16,34 +16,33 @@ function Footer() {
         <div className='footer-wrapper'>
 
         <ul className='customers'>
-          <h4>ПОКУПАТЕЛЯМ</h4>
+          <h4>Customer's</h4>
 
-          <li>Доставка</li>
-          <li>Оплата</li>
-          <li>Возврат</li>
-          <li>Отзывы</li>
-          <li>Вопросы и ответы</li>
+          <li>Delivery</li>
+          <li>payment</li>
+          <li>Return</li>
+          <li>Comments</li>
+          <li>Answers & questions</li>
          
         </ul>
 
         <ul className='about'>
-          <h4>О КОМПАНИИ</h4>
-          <li>О Нас</li>
-          <li>Пресса о нас</li>
-          <li>Вакансии</li>
-          <li>Контакты</li>
-          <li>Кафе партнеры</li>
+          <h4>About Company</h4>
+          <li>About us</li>
+          <li>Vacansy</li>
+          <li>Contact</li>
+          <li>Partners</li>
         </ul>
 
         <div className='pay'>
-          <h4>НОВОСТИ</h4>
-          <p>Новинки, акции, рецепты и полезные советы</p>
+          <h4>News</h4>
+          <p>new promotions recipes and useful tips</p>
           <div>
-            <input type="text" placeholder='Введите ваш e-mail' /> <span><ArrowForwardIosIcon/></span>
+            <input type="text" placeholder='your e-mail address' /> <span><ArrowForwardIosIcon/></span>
           </div>
           <p> 
-            Подписываясь на рассылку, вы соглашаетесь
-           с условиями. Политики конфиденциальности.
+          By subscribing to the newsletter, you agree
+           with conditions. Privacy Policy.
          </p>
 
           <img src={svg} alt='svg' />
@@ -51,7 +50,7 @@ function Footer() {
         </div>
 
         <div className="contact">
-          <h4>КОНТАКТЫ</h4>
+          <h4>Contact</h4>
           <div className="contact-icons">
             <TelegramIcon/>
             <FacebookIcon/>
@@ -61,18 +60,18 @@ function Footer() {
 
           </div>
           <div className='contact-bottom'>
-            <p>8 800 200-95-70</p>
-            <small>Бесплатный звонок по Москве и МО c 8:00 до 20:00</small>
-            <p>8 495 128-95-70</p>
-            <p>8 915 124-03-03</p>
+          <p>+998999331564</p>
+            <small>Free call within Tashkent and Tashkent region c 8:00 до 20:00</small>
+            <p>+998999331564</p>
+            <p>+998999331564</p>
                 <br />
               <a className='contact-email' href="mailto:mail@napoleoncake.ru">mail@napoleoncake.ru</a>
               <br />
               <a href="#">Написать нам</a>
-              <p>125438, г. Москва, Лихоборская набережная, 14</p>
-              <a href="#">Смотреть на карте</a>
+              <p>Tashkent region,  Yangiyul City , street yoshlik 7 house </p>
+              <a href="#">View in map</a>
 
-              <h5>© Кондитерская NapoleonCake, 2015 - 2022</h5>
+              <h5>© Company  LapTop.uz, 2002 - 2023</h5>
           </div>
         </div>
         </div>

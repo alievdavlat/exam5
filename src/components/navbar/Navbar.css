@@ -5,22 +5,25 @@
   gap: 98px;
   justify-content:space-between;
 }
-.navbar-left {
+.navbar-left{
   display: flex;
   gap: 120px;
   align-items: center;
+}
+.navbar-left-menu{
+  display: flex;
+  gap: 20px;
 }
 .navbar-left h1{
   font-weight: 500;
   font-size: 25px;
   line-height: 38px;
   color: #3a3a3a;
-  margin-left:100px;
 }
 .navbar-left ul li,
 .navbar-left ul {
-  display: flex;
-  align-items: center;
+  display: flex ;
+  align-items: center ;
   gap: 20px;
   cursor: pointer;
 }
@@ -65,5 +68,46 @@
 }
 
 
+@media (max-width:420px){
+  .navbar {
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  }
+  .navbar-left{
+    gap: 50px;
+  }
+  .navbar-left ul li{
+    gap: 10px;
+    display: none;
+  }
+  .navbar-left h1{
+  margin-left: 0;
+  }
+  .navbar-right{
+    flex-direction: column;
+    gap: 40px;
+  }
+  .navbar-addres{
+    display: none;
+  }
+  .cotalog-text{
+    display: none !important;
+  }
+}
 
 
+
+@media (max-width:900px){
+  .navbar{
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+    align-items: center;
+  }
+  .navbar-addres{
+    display: none;
+  }
+
+  
+}
