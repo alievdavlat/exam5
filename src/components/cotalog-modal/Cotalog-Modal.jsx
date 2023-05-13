@@ -1,20 +1,28 @@
 import React from 'react'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import './Cotalog-Modal.css'
+import axios from 'axios';
+import { useDispatch } from 'react-redux';
+import { setFilterProduct } from '../../redux/slices/filterSlice';
+
+const arr = ['all', 'new','popular', 'phones' ,'another']
 
 function CotalogModal() {
+  const dispatch  = useDispatch()
+
+
+  const onFetch = async (name) => {
+    const res = await axios.get(`http://localhost:3001/${name}`)
+    dispatch(setFilterProduct(res.data))
+  }
+
   return (
     <div className='cotalog-modal'>
         <p>Каталог</p>
         <ul>
-          <li><span>Новинки</span> <ArrowForwardIosIcon/></li>
-          <li><span>Торты</span> <ArrowForwardIosIcon/></li>
-          <li><span>Десерты в баночках</span> <ArrowForwardIosIcon/></li>
-          <li><span>Пирожные</span> <ArrowForwardIosIcon/></li>
-          <li><span>Подарочные наборы</span> <ArrowForwardIosIcon/></li>
-          <li><span>Шоколад</span> <ArrowForwardIosIcon/></li>
-          <li><span>Украшения</span> <ArrowForwardIosIcon/></li>
-          <li><span>Капкейки</span> <ArrowForwardIosIcon/></li>
+         {
+          arr.map((item, idx) =>  <li onClick={() => onFetch(item)} ><span>{item}</span> <ArrowForwardIosIcon/></li>)
+         }
         </ul>
     </div>
   )

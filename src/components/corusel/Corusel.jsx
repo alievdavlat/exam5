@@ -26,7 +26,7 @@ function Corusel({slider}) {
         slider.map((item, idx) => {
           return(
             <div key={item.id}>
-            <img src={item.img} width={'100%'} style={{objectFit:"cover"}} height={600}  alt="slide" />
+            <img src={item.img} className='header-corusel' width={'100%'}  height={600}  alt="slide" />
           </div>
       
           )

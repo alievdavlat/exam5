@@ -30,7 +30,7 @@ function ProductsCart({name, proccesor, memory,screen,price,img}) {
         </span>
 
           <div className='karzinka'>
-            <button>В корзину</button>  <FavoriteBorderIcon sx={{fontSize:'30px',margin:'15px 0px 0px 0px'}}/>
+            <button>Karzinka</button>  <FavoriteBorderIcon sx={{fontSize:'30px',margin:'15px 0px 0px 0px'}}/>
           </div>
       </div>
 
