@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { About, Cotalog, Main, Rest, Vacansy } from '../pages'
+import { About, Cotalog, Kazrinka, LikedProducts, Main, Rest, Vacansy } from '../pages'
 import { Navbar, ScrollTop } from '../components'
 
 function Layout() {
@@ -16,6 +16,8 @@ function Layout() {
       <Route path='/rest' element={<Rest/>} />
       <Route path='/about' element={<About/>} />
       <Route path='/vacansy' element={<Vacansy/>} />
+      <Route path='/liked' element={<LikedProducts/>} />
+      <Route path='/karzinka' element={<Kazrinka/>} />
     </Routes>
     
     </>

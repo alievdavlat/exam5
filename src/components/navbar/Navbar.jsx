@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 // style
 import './Navbar.css'
 // icons 
@@ -15,14 +15,15 @@ import MenuBurger from '../menu-burger/Menu-Burger';
 import { setPopUpShow } from '../../redux/slices/popUpSlice';
 import { setShowCarts, setShowInput } from '../../redux/slices/searchBarSlice';
 import SearchBar from '../searchBar/SearchBar';
-
+import { context } from '../../App';
 const navTItle = ['mackbooks','acer', 'lenova','asus','hp']
 
 function Navbar() {
   const dispatch = useDispatch()
   const {popUpShow} = useSelector(state => state.popUpSlice)
   const {showInput} = useSelector(state => state.searchBarSlice)
-  const [activeItem, setActive] = React.useState(0)
+  const [producst, setProducts, showLiked, setShowLiked, likeCount, setLikeCount] = useContext(context)
+
 
   const handleSearch = () => {
     dispatch(setShowInput(true))
@@ -59,7 +60,10 @@ function Navbar() {
                   <PhoneCallbackIcon sx={{fontSize:'25px'}} />
                   <span onClick={() => handleSearch()}><SearchIcon sx={{fontSize:'25px'}} /></span>
                   <PersonOutlineIcon sx={{fontSize:'25px'}} />
-                  <FavoriteBorderIcon sx={{fontSize:'25px'}} />
+                  <Link to={'/liked'} onClick={() => setShowLiked(false)}>
+                    <span className='like'> <FavoriteBorderIcon sx={{fontSize:'25px'}} /> <sup className='likedLenght'>{likeCount}</sup> </span>
+                  </Link>
+                  
                   <WorkOutlineSharpIcon sx={{fontSize:'25px'}} />
                   
               </div>

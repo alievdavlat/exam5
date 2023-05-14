@@ -73,7 +73,12 @@
   color: #676666;
   cursor: pointer;
 }
-
+.like{
+}
+.likedLenght{
+color: red;
+font-size: 17px;
+}
 
 @media (max-width:420px){
   .navbar {

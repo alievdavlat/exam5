@@ -12,7 +12,6 @@ function Main() {
   const [producst, setProducts] = useContext(context)
   const { inputValue, showcarts } = useSelector( state => state.searchBarSlice)
 
-
   const getData = async () => {
     const allProduct = await request.get('/all')    
     setProducts(allProduct.data)

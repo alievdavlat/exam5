@@ -1,34 +1,38 @@
 import React, { useContext } from 'react'
 import './ProductsCart.css'
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import { context } from '../../App';
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { colors } from '@mui/material';
-import { useDispatch } from 'react-redux';
-import { likedProduct } from '../../redux/slices/cartSlices/allCartSlice';
-
-const LikedlocolStorage = JSON.parse(localStorage.getItem('liked')) ?  JSON.parse(localStorage.getItem('liked')) : []
+import { context, shoppingCart } from '../../App';
+import { likedProducts } from '../../App';
 
 function ProductsCart({id,name, proccesor, memory,screen,price,img,isLikded}) {
-  const [producst, setProducts] = useContext(context)
+  const [producst, setProducts, showLiked, setShowLiked, setLikeCount] = useContext(context)
 
 
 
   const handleLiked = () => {
     if (!isLikded) {
-      LikedlocolStorage.push({id,name, proccesor, memory,screen,price,img,isLikded:true})
+      likedProducts.push({id,name, proccesor, memory,screen,price,img,isLikded:true})
       setProducts(p => p.map(item => item.id === id ? {...item,isLikded:true } : item))
     } else{
       setProducts(p => p.map(item => item.id === id ? {...item,isLikded:false } : item))
 
     }
   }
+  const handleShop = () => {
+    shoppingCart.push({id,name, proccesor, memory,screen,price,img})
+  }
+
 
   React.useEffect(() => {
-    localStorage.setItem('liked', JSON.stringify(LikedlocolStorage))
+    localStorage.setItem('shop', JSON.stringify(shoppingCart))
+  }, [handleShop])
+
+  React.useEffect(() => {
+    localStorage.setItem('liked', JSON.stringify(likedProducts))
   },[handleLiked])
+
+
   return (
-    <div className='productCart'>
+    <div className='productCart' id={id}>
       <div className="product-cart__img">
         <img src={img} alt={name} />
       </div>
@@ -50,7 +54,7 @@ function ProductsCart({id,name, proccesor, memory,screen,price,img,isLikded}) {
         </span>
 
           <div className='karzinka'>
-            <button>Karzinka</button> <span className={`${isLikded ? 'liked' : ''}`}> <i className="fa-solid fa-heart" style={{ fontSize:"25px", cursor:"pointer"}}  onClick={() =>  handleLiked()}></i></span>
+            <button onClick={() => handleShop()}>Karzinka</button> { showLiked ?  <span className={`${isLikded ? 'liked' : ''}`}><i className="fa-solid fa-heart" style={{ fontSize:"25px", cursor:"pointer"}}  onClick={() =>  handleLiked()}></i> </span> :  <i className="fa-solid fa-trash" style={{ fontSize:"25px", cursor:"pointer"}} onClick={() => setLikeCount(id)}></i>}
           </div>
       </div>
 
