@@ -2,10 +2,11 @@ import React from 'react'
 import './VacansyInfo.css'
 import img from '../../assets/img/Снимок экрана 2022-07-21 в 23.28 1.jpg'
 import axios from 'axios'
+import AddRezume from './addrezume/AddRezume'
 
 // name, description,price, city,exprience, fulltime,whatdo 
 
-function VacansyInfo({currentData, setSHowVacansy}) {
+function VacansyInfo({currentData, setSHowVacansy, setOpenModal}) {
 const [data ,setData] = React.useState({})
 
   const getData = async () => {
@@ -23,6 +24,7 @@ const [data ,setData] = React.useState({})
 
 
   return (
+    <>
     <div className='vacansyInfo'>
         <div className='vacansyInfo-text'>
          
@@ -63,7 +65,7 @@ const [data ,setData] = React.useState({})
           </div>
 
          <div className="buttons-group">
-         <button>
+         <button onClick={() => setOpenModal(true)}>
             add rezume
           </button>
           <button onClick={() => setSHowVacansy(true)}>
@@ -72,6 +74,7 @@ const [data ,setData] = React.useState({})
          </div>
        </div>
     </div>
+    </>
   )
 }
 
