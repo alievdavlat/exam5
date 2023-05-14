@@ -1,7 +1,7 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
-import { Cotalog, Main, Rest } from '../pages'
-import { Navbar } from '../components'
+import { About, Cotalog, Main, Rest, Vacansy } from '../pages'
+import { Navbar, ScrollTop } from '../components'
 
 function Layout() {
   return (
@@ -9,12 +9,15 @@ function Layout() {
      <header>
         <Navbar />
       </header>
-    
+      <ScrollTop/>
     <Routes>
       <Route  path='/' element={<Main/>} />
       <Route path='/catalog' element={<Cotalog/>} />
       <Route path='/rest' element={<Rest/>} />
+      <Route path='/about' element={<About/>} />
+      <Route path='/vacansy' element={<Vacansy/>} />
     </Routes>
+    
     </>
   )
 }

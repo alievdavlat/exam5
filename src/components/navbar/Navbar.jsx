@@ -22,6 +22,7 @@ function Navbar() {
   const dispatch = useDispatch()
   const {popUpShow} = useSelector(state => state.popUpSlice)
   const {showInput} = useSelector(state => state.searchBarSlice)
+  const [activeItem, setActive] = React.useState(0)
 
   const handleSearch = () => {
     dispatch(setShowInput(true))

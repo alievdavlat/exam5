@@ -1024,6 +1024,29 @@
       "img":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQahQeaZ58tTGyoZH6cgDYhO92ZnSoFtuYycQ&usqp=CAU"
     }
 
+  ],
+  "vacansy":[
+    {
+      "id":1,
+      "name":"seller",
+      "description":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque praesentium perspiciatis unde placeat quidem ipsa dolorum amet, quisquam soluta doloribus!",
+      "price":"800$",
+      "city":"Tashkent",
+      "exprience":"at least exprience from 3 to 6 years",
+      "fulltime":"full time",
+      "whatdo":{"title":"what do you need to do ", "text":"Lorem ipsum dolor sit amet."}
+    },
+    {
+      "id":2,
+      "name":"technicion",
+      "description":"Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque praesentium perspiciatis unde placeat quidem ipsa dolorum amet, quisquam soluta doloribus!",
+      "price":"1200$",
+      "city":"Tashkent",
+      "exprience":"at least exprience from 3 to 6 years",
+      "fulltime":"full time",
+      "whatdo":{"title":"what do you need to do ", "text":"Lorem ipsum dolor sit amet."}
+    }
+
   ]
 
   

@@ -28,6 +28,13 @@
   cursor: pointer;
 }
 
+/* .navbar-left ul li{
+  background: #676666;
+  border-radius: 10px;
+  color: white;
+  font-size: 20px;
+  font-weight: 500;
+} */
 .navbar-left ul li{
   font-weight: 400;
   font-size: 18px;
@@ -79,7 +86,7 @@
   }
   .navbar-left ul li{
     gap: 10px;
-    display: none;
+    display: none !important;
   }
   .navbar-left h1{
   margin-left: 0;
@@ -108,6 +115,7 @@
   .navbar-addres{
     display: none;
   }
-
-  
+  .navbar-left{
+    gap: 30px;
+  }  
 }

@@ -7,6 +7,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import YouTubeIcon from '@mui/icons-material/YouTube';
 import wk from '../../assets/img/vk 1.png'
+import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
@@ -28,8 +29,14 @@ function Footer() {
 
         <ul className='about'>
           <h4>About Company</h4>
+          <Link to={'/about'}>
           <li>About us</li>
+          </Link>
+
+          <Link to={'/vacansy'}>
           <li>Vacansy</li>
+          </Link>
+
           <li>Contact</li>
           <li>Partners</li>
         </ul>

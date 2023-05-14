@@ -16,7 +16,6 @@ import { setCartNames } from '../../redux/slices/cartsSlice';
 function MenuBurger() {
   const {popUpShow} = useSelector(state => state.popUpSlice)
   const dispatch = useDispatch()
-  console.log(popUpShow);
 
   return (
     <div className='menuBurger-overlay' onClick={() => dispatch(setPopUpShow(false))}> 
@@ -24,7 +23,7 @@ function MenuBurger() {
      <div className={`menu-burger__inner ${popUpShow ? 'transformShow' : 'transformHide'}`} >
         <button className='menu-burger__closeBtn'  onClick={() => dispatch(setPopUpShow(false))}><CloseIcon/></button>
         <ul className="menu-burger">
-            <Link top={'/aboutus'}>
+            <Link to={'/about'}>
             <li><span>About us</span> <ArrowForwardIosIcon/></li>
             </Link>
 
