@@ -2,18 +2,23 @@ import React, { useContext } from 'react'
 import './ProductsCart.css'
 import { context, shoppingCart } from '../../App';
 import { likedProducts } from '../../App';
+import { useDispatch } from 'react-redux';
+import { setItem } from '../../redux/slices/singlePageSlice';
+import { Link } from 'react-router-dom';
 
 function ProductsCart({id,name, proccesor, memory,screen,price,img,isLikded}) {
-  const [producst, setProducts, showLiked, setShowLiked, setLikeCount] = useContext(context)
-
+  const [producst, setProducts, restProduct, setRestProduct] = useContext(context)
+  const dispatch = useDispatch()
 
 
   const handleLiked = () => {
     if (!isLikded) {
       likedProducts.push({id,name, proccesor, memory,screen,price,img,isLikded:true})
       setProducts(p => p.map(item => item.id === id ? {...item,isLikded:true } : item))
+      setRestProduct(p => p.map(item => item.id === id ? {...item,isLikded:true } : item))
     } else{
       setProducts(p => p.map(item => item.id === id ? {...item,isLikded:false } : item))
+      setRestProduct(p => p.map(item => item.id === id ? {...item,isLikded:false } : item))
 
     }
   }
@@ -28,11 +33,13 @@ function ProductsCart({id,name, proccesor, memory,screen,price,img,isLikded}) {
 
   React.useEffect(() => {
     localStorage.setItem('liked', JSON.stringify(likedProducts))
+
   },[handleLiked])
 
 
   return (
-    <div className='productCart' id={id}>
+   
+    <div className='productCart' id={id} onClick={() => dispatch(setItem({id,name, proccesor, memory,screen,price,img})) }>
       <div className="product-cart__img">
         <img src={img} alt={name} />
       </div>
@@ -50,16 +57,17 @@ function ProductsCart({id,name, proccesor, memory,screen,price,img,isLikded}) {
 
         <span className='price'>
           <b>{price}</b>
-          
         </span>
-
+        <br />
+        <Link to={'/singlepage'} onClick={() => dispatch(setItem({id,name, proccesor, memory,screen,price,img})) }><span className='showInfo'>show More info...</span></Link> 
           <div className='karzinka'>
-            <button onClick={() => handleShop()}>Karzinka</button> { showLiked ?  <span className={`${isLikded ? 'liked' : ''}`}><i className="fa-solid fa-heart" style={{ fontSize:"25px", cursor:"pointer"}}  onClick={() =>  handleLiked()}></i> </span> :  <i className="fa-solid fa-trash" style={{ fontSize:"25px", cursor:"pointer"}} onClick={() => setLikeCount(id)}></i>}
+              <button onClick={() => handleShop()}>Karzinka</button> <span className={`${isLikded ? 'liked' : ''}`}><i className="fa-solid fa-heart" style={{ fontSize:"25px", cursor:"pointer"}}  onClick={() =>  handleLiked()}></i> </span> 
           </div>
       </div>
 
       
     </div>
+  
   )
 }
 

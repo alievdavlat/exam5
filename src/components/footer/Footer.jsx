@@ -19,11 +19,23 @@ function Footer() {
         <ul className='customers'>
           <h4>Customer's</h4>
 
+            <Link to={'/delevery'}>
           <li>Delivery</li>
+            </Link>
+
+          <Link to={'/payment'}>
           <li>payment</li>
+          </Link>
+
+          <Link to={'/payment'}>
           <li>Return</li>
+          </Link>
+
           <li>Comments</li>
+
+          <Link to={'/payment'}>
           <li>Answers & questions</li>
+          </Link>
          
         </ul>
 
@@ -37,7 +49,9 @@ function Footer() {
           <li>Vacansy</li>
           </Link>
 
+          <Link to={'/contact'}>
           <li>Contact</li>
+          </Link>
           <li>Partners</li>
         </ul>
 

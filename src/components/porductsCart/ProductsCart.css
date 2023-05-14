@@ -1,6 +1,6 @@
 .productCart{
 width: 300px;
-height: 530px;
+height: 580px;
 background: #FFFFFF;
 border-radius: 15px;
 
@@ -34,7 +34,10 @@ margin-bottom: 15px;
   justify-content: space-between;
   margin-bottom: 15px;
 }
-
+.showInfo{
+  color: #3A3A3A;
+  margin-top:20px;
+}
 .info div{
 font-weight: 400;
 font-size: 16px;

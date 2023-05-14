@@ -3,7 +3,7 @@
   justify-content:center;
   align-items:center;
   margin-top:60px;
-  /* background:url(../assets/img/bg); */
+  position: relative;
 }
 .reklama{
   width: 90%;
@@ -12,5 +12,15 @@
   background-repeat: no-repeat;
   margin-bottom: 100px;   
   object-fit:cover;
+}
+.reklama-text{
+position: absolute;
+z-index: 100;
+right: 100px;
+}
 
+.reklama-text p{
+  font-size: 40px;
+  color: #fff;
+  letter-spacing: 2px;
 }

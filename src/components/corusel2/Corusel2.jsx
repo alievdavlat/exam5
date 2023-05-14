@@ -47,7 +47,7 @@ import './Corusel2.css'
         <Slider  {...settings}>
 
           {
-            data.filter(item => item.type === title || item.unique === title).map((item , idx) => <ProductsCart key={item.id} {...item} />)
+           data?.filter(item => item.type === title || item.unique === title).map((item , idx) => <ProductsCart key={item.id} {...item} />)
           }
         
         </Slider>

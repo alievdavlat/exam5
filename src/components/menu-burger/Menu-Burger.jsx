@@ -35,7 +35,7 @@ function MenuBurger() {
             <li><span>popular lapTops</span> <ArrowForwardIosIcon/></li>
             </Link>
 
-            <Link to={'contact'}>
+            <Link to={'/contact'}>
             <li><span>Contact</span> <ArrowForwardIosIcon/></li>
             </Link>
 

@@ -1,4 +1,5 @@
 import React, { useContext } from 'react'
+import request from '../../service/service'
 // style
 import './Navbar.css'
 // icons 
@@ -15,14 +16,15 @@ import MenuBurger from '../menu-burger/Menu-Burger';
 import { setPopUpShow } from '../../redux/slices/popUpSlice';
 import { setShowCarts, setShowInput } from '../../redux/slices/searchBarSlice';
 import SearchBar from '../searchBar/SearchBar';
-import { context } from '../../App';
-const navTItle = ['mackbooks','acer', 'lenova','asus','hp']
+import { context, likedProducts, shoppingCart } from '../../App';
+import axios from 'axios';
+const navTItle = ['mackbook','acer', 'lenova','asus','hp']
 
 function Navbar() {
   const dispatch = useDispatch()
   const {popUpShow} = useSelector(state => state.popUpSlice)
   const {showInput} = useSelector(state => state.searchBarSlice)
-  const [producst, setProducts, showLiked, setShowLiked, likeCount, setLikeCount] = useContext(context)
+
 
 
   const handleSearch = () => {
@@ -30,11 +32,14 @@ function Navbar() {
     dispatch(setShowCarts(true))
   }
 
+
+ 
   return (    
     <>
       {popUpShow && <MenuBurger/>}
   <div className="container">
-      
+
+
         {
         showInput ? <SearchBar/> :
         <nav className='navbar'>
@@ -44,7 +49,7 @@ function Navbar() {
                   <span onClick={() => dispatch(setPopUpShow(true))}><MenuIcon sx={{fontSize:'30px'}} /></span>   <li>  <Link to={'/catalog'}><span className='cotalog-text'>Cotalog</span></Link></li>
                 </div>
                   {
-                    navTItle.map((item, idx) => <Link to={'/rest'} key={idx}> <li onClick={() => dispatch(setCartNames(item))}>{item}</li> </Link>)
+                    navTItle.map((item, idx) => <Link to={'/rest'} key={idx}> <li   onClick={() => dispatch(setCartNames(item))}>{item}</li> </Link>)
                   }
               </ul>
                 <Link to={'/'}><h1>LapTop.uz</h1></Link>
@@ -60,11 +65,12 @@ function Navbar() {
                   <PhoneCallbackIcon sx={{fontSize:'25px'}} />
                   <span onClick={() => handleSearch()}><SearchIcon sx={{fontSize:'25px'}} /></span>
                   <PersonOutlineIcon sx={{fontSize:'25px'}} />
-                  <Link to={'/liked'} onClick={() => setShowLiked(false)}>
-                    <span className='like'> <FavoriteBorderIcon sx={{fontSize:'25px'}} /> <sup className='likedLenght'>{likeCount}</sup> </span>
+                  <Link to={'/liked'} >
+                    <span className='like'> <FavoriteBorderIcon sx={{fontSize:'25px'}} /> <sup className='likedLenght'>{likedProducts.length}</sup> </span>
                   </Link>
-                  
-                  <WorkOutlineSharpIcon sx={{fontSize:'25px'}} />
+                  <Link to={'/karzinka'}>
+                 <span> <WorkOutlineSharpIcon sx={{fontSize:'25px'}} /> <sup className='likedLenght'>{shoppingCart.length}</sup></span>
+                  </Link>
                   
               </div>
             </div>

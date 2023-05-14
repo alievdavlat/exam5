@@ -2,22 +2,25 @@ import React, { useContext, useEffect, useRef } from 'react'
 import './LikedProducts.css'
 import { ProductsCart } from '../../components'
 import { context, likedProducts } from '../../App'
+import { Link } from 'react-router-dom'
 
 function LikedProducts() {
-  const [producst, setProducts, showLiked, setShowLiked, likeCount, setLikeCount] = useContext(context)
-  const ref  = useRef()
 
-useEffect(() => {
-    setLikeCount(ref.current.children?.length);
-},[])
  return (
     <div className='container'>
-      <div className="likedProducts" ref={ref}>
+      <div className="likedProducts-wrapper">
+
+      <div className="likedProducts">
         {
-          likedProducts.map((item, idx) => <ProductsCart key={idx}  {...item}/>)
+          likedProducts.length > 0 ?  likedProducts.map((item, idx) => <ProductsCart key={idx}  {...item}/>): <h1>No liked pruducts ☹️</h1>
         }
       </div>
-        
+          <Link to={'/'}>
+          <button className='likedProducts-btn'>
+            Back
+          </button>
+          </Link>
+        </div>
     </div>
   )
 }

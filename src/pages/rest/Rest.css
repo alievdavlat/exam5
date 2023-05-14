@@ -28,3 +28,13 @@
 .prev-btn:hover{
   background: #394567;
 }
+
+@media (max-width:420px) {
+  .rest{
+  padding: 0px 20px;
+  }
+  .rest-cards{
+    flex-direction: column;
+  }
+  
+}

@@ -9,13 +9,13 @@ import Layout from './layout/Layout';
  
 function App() {
 const [producst, setProducts] = React.useState([])
-const [showLiked, setShowLiked] = React.useState(true)
-const [likeCount, setLikeCount] = React.useState(0)
+const [restProduct, setRestProduct] = React.useState([])
 
+  
 
   return (
     <div className="App">
-      <context.Provider value={[producst, setProducts, showLiked, setShowLiked, likeCount, setLikeCount]}>
+      <context.Provider value={[producst, setProducts,restProduct, setRestProduct]}>
         <Layout/>
       </context.Provider>
     </div>

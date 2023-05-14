@@ -1,0 +1,33 @@
+.payment-wrap{
+  padding-left: 330px;
+  padding-right: 330px;
+}
+.payment-wrap h2{
+padding: 25px;
+}
+.img{
+  width: 780px;
+  height: 450px;
+}
+.drop{
+ margin-bottom: 915px;
+}
+.payment{
+  display: flex;
+}
+.map{
+  width: 980px;
+  height: 250px;
+  /* width: 90%;
+  height: 435px; */
+  margin-top: 112px;
+  background-repeat: no-repeat;
+  margin-bottom: 100px;   
+  object-fit:cover;
+}
+.delivery-pic{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
