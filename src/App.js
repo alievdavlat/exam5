@@ -5,12 +5,12 @@ import Layout from './layout/Layout';
  export const context = createContext()
 
 function App() {
-const [showSelect, setShowSelect] = React.useState(true)
+const [producst, setProducts] = React.useState([])
 
 
   return (
     <div className="App">
-      <context.Provider value={[showSelect, setShowSelect]}>
+      <context.Provider value={[producst, setProducts]}>
         <Layout/>
       </context.Provider>
     </div>

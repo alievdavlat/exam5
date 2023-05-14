@@ -3,16 +3,32 @@ import './ProductsCart.css'
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { context } from '../../App';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
-import { useDispatch, useSelector } from 'react-redux';
-import { setIsLiked } from '../../redux/slices/likeSlice';
+import { colors } from '@mui/material';
+import { useDispatch } from 'react-redux';
+import { likedProduct } from '../../redux/slices/cartSlices/allCartSlice';
 
-function ProductsCart({name, proccesor, memory,screen,price,img}) {
-  const [showSelect , setShowSelect] = useContext(context)
-  const {isLiked} = useSelector(state => state.likeSlice)
-  const dispatch = useDispatch()
+const LikedlocolStorage = JSON.parse(localStorage.getItem('liked')) ?  JSON.parse(localStorage.getItem('liked')) : []
 
+function ProductsCart({id,name, proccesor, memory,screen,price,img,isLikded}) {
+  const [producst, setProducts] = useContext(context)
+
+
+
+  const handleLiked = () => {
+    if (!isLikded) {
+      LikedlocolStorage.push({id,name, proccesor, memory,screen,price,img,isLikded:true})
+      setProducts(p => p.map(item => item.id === id ? {...item,isLikded:true } : item))
+    } else{
+      setProducts(p => p.map(item => item.id === id ? {...item,isLikded:false } : item))
+
+    }
+  }
+
+  React.useEffect(() => {
+    localStorage.setItem('liked', JSON.stringify(LikedlocolStorage))
+  },[handleLiked])
   return (
-    <div className='productCart' style={{width:`${showSelect ? '320px' : '320px'}`, height:`${showSelect ? '530px' : '450px'}`}}>
+    <div className='productCart'>
       <div className="product-cart__img">
         <img src={img} alt={name} />
       </div>
@@ -23,18 +39,18 @@ function ProductsCart({name, proccesor, memory,screen,price,img}) {
         <div className='info'>
           <span>{proccesor}</span>
           <div>
-          <span>({memory}) </span>
-          <span> {screen}</span>
+          <span>({memory})</span>
+          <span>{screen}</span>
           </div>
         </div>
 
         <span className='price'>
           <b>{price}</b>
-          {/* <span>{}</span> */}
+          
         </span>
 
           <div className='karzinka'>
-            <button>Karzinka</button>  {isLiked ? <span onClick={() => dispatch(setIsLiked(false))} style={{fontSize:'30px', cursor:'pointer'}}>❤️</span>  :  <span onClick={() => dispatch(setIsLiked(true))}><FavoriteBorderIcon sx={{fontSize:'30px',margin:'15px 0px 0px 0px',cursor:'pointer'}}/></span> }
+            <button>Karzinka</button> <span className={`${isLikded ? 'liked' : ''}`}> <i className="fa-solid fa-heart" style={{ fontSize:"25px", cursor:"pointer"}}  onClick={() =>  handleLiked()}></i></span>
           </div>
       </div>
 

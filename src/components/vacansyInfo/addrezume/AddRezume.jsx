@@ -2,7 +2,7 @@ import React from 'react'
 import './AddRezume.css'
 import CloseIcon from '@mui/icons-material/Close';
 
-function AddRezume({setOpenModal}) {
+function AddRezume({setOpenModal, name,city}) {
   const handleClose = e => {
     if(e.target.className == 'addRezume-overlay') {
       setOpenModal(false)
@@ -14,8 +14,8 @@ function AddRezume({setOpenModal}) {
         <div className="addRezume">
           <div className='addRezume-top'>
             <span>
-            <h2>djosqkndkns</h2>
-            <p>ndkknk</p>
+            <h2>{name}</h2>
+            <p>{city}</p>
             </span>
               <span style={{cursor:'pointer'}} onClick={() => setOpenModal(false)}><CloseIcon/></span>
           </div>

@@ -4,7 +4,7 @@ import ProductsCart from "../porductsCart/ProductsCart";
 import './Corusel2.css'
 
 
- const Corusel2 = ({show,data}) => {
+ const Corusel2 = ({show,data, title}) => {
 
 
   const settings = {
@@ -47,7 +47,7 @@ import './Corusel2.css'
         <Slider  {...settings}>
 
           {
-            data.map((item , idx) => <ProductsCart key={item.id} {...item} />)
+            data.filter(item => item.type === title || item.unique === title).map((item , idx) => <ProductsCart key={item.id} {...item} />)
           }
         
         </Slider>

@@ -5,6 +5,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { setAllProduct } from '../../redux/slices/cartsSlice'
+import request from '../../service/service'
 
 
 
@@ -12,7 +13,7 @@ function Rest() {
   const {cartNames, allProduct} = useSelector(state => state.cartsSlice)
   const dispatch = useDispatch()
   const getData = async () => {
-    const all = await axios.get(`http://localhost:3001/${cartNames}`)
+    const all = await request.get(`/${cartNames}`)
     dispatch(setAllProduct(all.data))
   
   }

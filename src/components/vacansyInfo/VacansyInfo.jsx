@@ -6,7 +6,7 @@ import AddRezume from './addrezume/AddRezume'
 
 // name, description,price, city,exprience, fulltime,whatdo 
 
-function VacansyInfo({currentData, setSHowVacansy, setOpenModal}) {
+function VacansyInfo({currentData, setSHowVacansy, setOpenModal, setModaldata}) {
 const [data ,setData] = React.useState({})
 
   const getData = async () => {
@@ -22,7 +22,11 @@ const [data ,setData] = React.useState({})
     getData()
   },[])
 
+const handleModal = () => {
+  setOpenModal(true)
+  setModaldata({name:data.name, city:data.city})
 
+}
   return (
     <>
     <div className='vacansyInfo'>
@@ -65,7 +69,7 @@ const [data ,setData] = React.useState({})
           </div>
 
          <div className="buttons-group">
-         <button onClick={() => setOpenModal(true)}>
+         <button onClick={() => handleModal()}>
             add rezume
           </button>
           <button onClick={() => setSHowVacansy(true)}>

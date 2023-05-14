@@ -22,7 +22,7 @@ function Products({title, data,show}) {
 
            <div className="products"> 
 
-              <Corusel2 data={data}  show={show}/>
+              <Corusel2 data={data}  title={title} show={show}/>
               
            </div>
         </div>
